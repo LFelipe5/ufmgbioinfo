@@ -27,4 +27,4 @@ print(pi)
 
 # Exercicio 7
 pi = 3.1415
-    print(pi) # Com um "tab" antes do print
+print(pi) # Com um "tab" antes do print
