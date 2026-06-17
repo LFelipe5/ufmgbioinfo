@@ -1,69 +1,90 @@
-#  Versão Python 3.12.3
-seqA = "LRSSSQNSSDKPVAHVVANHQVEEQLEWLSQRANALLANGMDLKDNQLVVPADGLYLVYSQVLFKGQGCPDYVLLTHTVSLRSSSDK"
-seqB = "KPAAHLIGDPSKQNSLLWRANTDRAFLQDGFSLSNNSLLVPTSGIYFVYSQVVFSGKAYSPKATSSPLYLAHEVQLFSS"
-seqC = "CPQGKYIHPQNNSICCTKCHKGTYLYNDCPGPGQDTDCRECESGSFTASENHLRHCLSCSKCRKEMGQVEISSCTVDRDTVCGCR"
+# Versão Python 3.12.3
 
 # QUESTÃO 1
-temp = []
-if len(seqA) >= 80:
-    temp.append(seqA)
-if len(seqB) >= 80:
-    temp.append(seqB)
-if len(seqC) >= 80:
-    temp.append(seqC)
-print(temp)
+tamseq = 25
+
+if tamseq >= 50:
+    print("A sequência é aceita.")
+else:
+    print("A sequência é rejeitada.")
 
 # QUESTÃO 2
-media = (len(seqA) + len(seqB) + len(seqC)) / 3
-temp = []
-if len(seqA) > media:
-    temp.append(seqA)
-if len(seqB) > media:
-    temp.append(seqB)
-if len(seqC) > media:
-    temp.append(seqC)
-print(temp)
+tamseq = 10
+
+if tamseq > 2 and tamseq <= 50:
+    print("A sequência é aceita.")
+else:
+    print("A sequência é rejeitada.")
 
 # QUESTÃO 3
-temp = []
-if 'H' in seqA and 'P' in seqA:
-    temp.append(seqA)
-if 'H' in seqB and 'P' in seqB:
-    temp.append(seqB)
-if 'H' in seqC and 'P' in seqC:
-    temp.append(seqC)
-print(temp)
+aminoacidos = 30
+
+if aminoacidos == 2:
+    print("É dipeptídeo.")
+elif aminoacidos == 3:
+    print("É tripeptídeo.")
+elif aminoacidos > 3 and aminoacidos <= 50:
+    print("É polipeptídeo.")
 
 # QUESTÃO 4
-if len(seqA) > len(seqB):
-    if len(seqA) > len(seqC):
-        print("A sequência mais longa é a seqA.")
-    else:
-        print("A sequência mais longa é a seqC.")
-else:
-    if len(seqB) > len(seqC):
-        print("A sequência mais longa é a seqB.")
-    else:
-        print("A sequência mais longa é a seqC.")
+hidrofobico = ['I', 'V', 'L', 'M', 'C', 'A', 'T', 'F', 'Y', 'W', 'H', 'K']
+pequeno = ['P', 'A', 'G', 'C', 'S', 'T', 'D', 'N', 'V']
+polar = ['C', 'S', 'T', 'N', 'D', 'Q', 'Y', 'W', 'H', 'K', 'R', 'E']
+carregado = ['D', 'E', 'R', 'K', 'H']
+aromatico = ['F', 'Y', 'W', 'H']
+minusculo = ['A', 'C', 'G', 'S']
+alifatico = ['I', 'L', 'V']
+hidroxila = ['T', 'S']
+acido = ['N', 'Q']
+enxofre = ['C', 'M']
+
+aminoacido = 'A'
+
+if aminoacido in hidrofobico:
+    print(f"{aminoacido} - hidrofobico")
+elif aminoacido in pequeno:
+    print(f"{aminoacido} - pequeno")
+elif aminoacido in polar:
+    print(f"{aminoacido} - polar")
+elif aminoacido in carregado:
+    print(f"{aminoacido} - carregado")
+elif aminoacido in aromatico:
+    print(f"{aminoacido} - aromatico")
+elif aminoacido in minusculo:
+    print(f"{aminoacido} - minusculo")
+elif aminoacido in alifatico:
+    print(f"{aminoacido} - alifatico")
+elif aminoacido in hidroxila:
+    print(f"{aminoacido} - hidroxila")
+elif aminoacido in acido:
+    print(f"{aminoacido} - acido")
+elif aminoacido in enxofre:
+    print(f"{aminoacido} - enxofre")
 
 # QUESTÃO 5
-if len(seqA) >= len(seqB):
-    if len(seqB) >= len(seqC):
-        print("seqC <= seqB <= seqA")
-        print(f"{seqC}\n{seqB}\n{seqA}")
-    elif len(seqA) >= len(seqC):
-        print("seqB <= seqC <= seqA")
-        print(f"{seqB}\n{seqC}\n{seqA}")
-    else:
-        print("seqB <= seqA <= seqC")
-        print(f"{seqB}\n{seqA}\n{seqC}")
+if aminoacido not in polar:
+    print(f"{aminoacido} - não polar")
 else:
-    if len(seqA) >= len(seqC):
-        print("seqC <= seqA <= seqB")
-        print(f"{seqC}\n{seqA}\n{seqB}")
-    elif len(seqB) >= len(seqC):
-        print("seqA <= seqC <= seqB")
-        print(f"{seqA}\n{seqC}\n{seqB}")
+    print(f"{aminoacido} - polar")
+
+if aminoacido not in carregado:
+    print(f"{aminoacido} - não carregado")
+else:
+    print(f"{aminoacido} - carregado")
+
+# QUESTÃO 6
+purinas = ['A', 'G']
+pirimidinas = ['C', 'T']
+todos_nucleotideos = purinas + pirimidinas
+
+valor = 'A'
+
+if valor in todos_nucleotideos:
+    print(f"{valor} é um nucleotídeo.")
+
+    if valor in purinas:
+        print(f"{valor} é uma purina.")
     else:
-        print("seqA <= seqB <= seqC")
-        print(f"{seqA}\n{seqB}\n{seqC}")
+        print(f"{valor} é uma pirimidina.")
+else:
+    print(f"{valor} não é um nucleotídeo.")
